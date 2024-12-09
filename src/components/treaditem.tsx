@@ -35,7 +35,7 @@ const Treaditem = () => {
         <h2 className="text-4xl font-bold text-center text-[#1E40B7] mb-16 mt-5">
           Trending Products
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {products.map((product, index) => (
             <div
               key={index}

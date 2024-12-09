@@ -1,65 +1,59 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
-const FeaturedProducts = () => {
+const Topitem = () => {
   const products = [
     {
-      name: "Cantilever chair",
-      code: "Y523201",
-      price: "$42.00",
-      image: "/feat-1.png",
+      name: 'Mini LCW Chair',
+      price: '$42.00',
+      image: '/top-1.png', // Replace with actual image paths
     },
     {
-      name: "Cantilever chair",
-      code: "Y523201",
-      price: "$42.00",
-      image: "/feat-2.png",
+      name: 'Mini LCW Chair',
+      price: '$42.00',
+      image: '/top-2.png',
     },
     {
-      name: "Cantilever chair",
-      code: "Y523201",
-      price: "$42.00",
-      image: "/feat-3.png",
+      name: 'Mini LCW Chair',
+      price: '$42.00',
+      image: '/top-3.png',
     },
     {
-      name: "Cantilever chair",
-      code: "Y523201",
-      price: "$42.00",
-      image: "/feat-4.png",
+      name: 'Mini LCW Chair',
+      price: '$42.00',
+      image: '/top-4.png',
     },
   ];
 
   return (
     <section className="py-10 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-[#1E40B7] mb-16 mt-5">
-          Featured Products
+        <h2 className="text-4xl font-bold text-center text-[#1E40B7] mb-16 mt-5">
+          Top Categories
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {products.map((product, index) => (
             <div
               key={index}
-              className="relative border rounded-xl p-4 bg-white shadow-md hover:shadow-lg transition duration-300"
-              style={{ width: "270px", height: "361px" }}
+              className="relative rounded-xl p-4 bg-white shadow-md hover:shadow-lg transition duration-300"
+              style={{ width: '290px', height: '361px' }}
             >
-              {/* Image */}
-              <div className="w-full h-40 flex items-center justify-center overflow-hidden rounded-lg mt-9">
+              {/* Product Image */}
+              <div className="w-full h-52 flex items-center justify-center overflow-hidden rounded-lg">
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="responsive" // Makes image responsive
-                  width={270}
-                  height={160} // Adjust for desired aspect ratio
+                  width={200} // Explicit width
+                  height={208} // Explicit height
                   className="object-contain"
                 />
               </div>
 
-              {/* Content */}
+              {/* Product Details */}
               <div className="mt-12 text-center">
-                <h3 className="text-lg font-semibold text-[#FB2E86]">
+                <h3 className="text-lg font-semibold text-[#1E40B7]">
                   {product.name}
                 </h3>
-                <p className="text-sm text-gray-500">{product.code}</p>
                 <p className="text-lg font-bold text-gray-800 mt-2">
                   {product.price}
                 </p>
@@ -79,4 +73,4 @@ const FeaturedProducts = () => {
   );
 };
 
-export default FeaturedProducts;
+export default Topitem;
