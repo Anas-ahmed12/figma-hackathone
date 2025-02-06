@@ -1,27 +1,31 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';  // Import Link from next/link
 
 const FeaturedProducts = () => {
   const products = [
     {
+      id: 1,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
       image: "/feat-1.png",
     },
     {
+      id: 2,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
       image: "/feat-2.png",
     },
     {
+      id: 3,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
       image: "/feat-3.png",
     },
     {
+      id: 4,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
@@ -47,9 +51,9 @@ const FeaturedProducts = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="responsive" // Makes image responsive
+                  layout="responsive"
                   width={270}
-                  height={160} // Adjust for desired aspect ratio
+                  height={160}
                   className="object-contain"
                 />
               </div>
@@ -67,9 +71,11 @@ const FeaturedProducts = () => {
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-transparent border-2 border-[#2F1AC4] text-white opacity-0 hover:opacity-100 flex items-center justify-center rounded-xl transition duration-300">
-                <button className="py-2 px-4 bg-white text-[#2F1AC4] font-bold rounded-md shadow-md">
-                  View Details
-                </button>
+                <Link href={`/product/${product.id}`}>
+                  <button className="py-2 px-4 bg-white text-[#2F1AC4] font-bold rounded-md shadow-md">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

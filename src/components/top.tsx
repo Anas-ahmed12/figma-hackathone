@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaUserMd } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { MdShoppingCartCheckout } from "react-icons/md";
+import Link from 'next/link';
 
 const Top = () => {
   return (
@@ -24,9 +25,13 @@ const Top = () => {
         <ul className='flex gap-5 text-white text-sm'>
             <li className='flex items-center'>English <IoIosArrowDown className='text-[17px]'/> </li>
             <li className='flex items-center'>USD <IoIosArrowDown className='text-[17px]'/> </li>
+            <Link href={'/login'}>
             <li className='flex items-center'>login <FaUserMd className='text-[13px] ml-1'/> </li>
+            </Link>
             <li className='flex items-center'>Wishlist <FaRegHeart className='text-[13px] ml-1'/> </li>
+            <Link href={'/card'}>
             <li><MdShoppingCartCheckout  className=' text-[22px]'/></li>
+            </Link>
 
         </ul>
     </span>

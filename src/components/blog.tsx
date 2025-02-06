@@ -7,7 +7,8 @@ const blogPosts = [
     author: "SaberAli",
     date: "21 August,2020",
     title: "Top essential Trends in 2021",
-    description: "More of this less hello samlande lied much over tightly circa horse taped mightly",
+    description:
+      "More of this less hello samlande lied much over tightly circa horse taped mightly",
     imgSrc: "/blog-1.jpeg",
   },
   {
@@ -15,7 +16,8 @@ const blogPosts = [
     author: "Surfuxion",
     date: "21 August,2020",
     title: "Top essential Trends in 2021",
-    description: "More of this less hello samlande lied much over tightly circa horse taped mightly",
+    description:
+      "More of this less hello samlande lied much over tightly circa horse taped mightly",
     imgSrc: "/blog-2.jpeg",
   },
   {
@@ -23,7 +25,8 @@ const blogPosts = [
     author: "SaberAli",
     date: "21 August,2020",
     title: "Top essential Trends in 2021",
-    description: "More of this less hello samlande lied much over tightly circa horse taped mightly",
+    description:
+      "More of this less hello samlande lied much over tightly circa horse taped mightly",
     imgSrc: "/blog-3.jpeg",
   },
 ];
@@ -43,11 +46,15 @@ const Leatestblog: React.FC = () => {
             className="bg-white rounded-md shadow-md p-4 w-full sm:w-[300px] md:w-[300px] md:h-[420px]"
           >
             {/* Blog Image */}
-            <Image
-              src={post.imgSrc}
-              alt={post.title}
-              className="h-40 w-full object-cover rounded-md"
-            />
+            <div className="relative h-40 w-full">
+              <Image
+                src={post.imgSrc}
+                alt={post.title}
+                layout="fill" // Parent container ka space fill karega
+                objectFit="cover" // Styling ko intact rakhega
+                className="rounded-md"
+              />
+            </div>
 
             {/* Blog Content */}
             <div className="mt-4">
@@ -62,9 +69,7 @@ const Leatestblog: React.FC = () => {
               <p className="text-[12px] text-gray-500 mt-2 font-medium">
                 {post.description}
               </p>
-              <button className="text-blue-500 underline mt-4">
-                Read More
-              </button>
+              <button className="text-blue-500 underline mt-4">Read More</button>
             </div>
           </div>
         ))}

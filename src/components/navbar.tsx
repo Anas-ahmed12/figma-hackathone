@@ -1,8 +1,8 @@
 "use client";
-import Link from 'next/link';
-import React, { useState } from 'react';
+import Link from "next/link";
+import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { FiMenu, FiX } from 'react-icons/fi'; // Import the menu and close icons
+import { FiMenu, FiX } from "react-icons/fi"; // Import the menu and close icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // State for the toggle button
@@ -25,23 +25,79 @@ const Navbar = () => {
             className="md:hidden absolute top-1/2 right-5 transform -translate-y-1/2 text-3xl text-black p-2" // Centered vertically next to the logo
             onClick={toggleNavbar}
           >
-            {isOpen ? <FiX /> : <FiMenu />} {/* Toggle between menu and close icon */}
+            {isOpen ? <FiX /> : <FiMenu />}{" "}
+            {/* Toggle between menu and close icon */}
           </button>
 
           {/* Navbar Links */}
           <nav
             className={`${
-              isOpen ? 'block' : 'hidden'
+              isOpen ? "block" : "hidden"
             } md:flex md:mr-auto md:ml-24 md:py-1 md:pl-4 flex flex-wrap items-center text-base justify-center`}
           >
-            <Link href={"#"} className="hover:text-[#FB2E86] text-[#FB2E86] font-semibold mr-10 flex items-center">
-              Home <IoIosArrowDown className="text-[17px]" />
+            {/* Home Link with Dropdown */}
+            <div className="relative group">
+              <Link
+                href={"/"}
+                className="hover:text-[#FB2E86] font-semibold mr-10 flex items-center"
+              >
+                Home <IoIosArrowDown className="text-[20px] pl-1 mt-1" />
+              </Link>
+
+              {/* Dropdown Menu */}
+              <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+                <Link
+                  href={"/about"}
+                  className="block px-4 py-2 text-black hover:text-[#FB2E86] hover:bg-gray-100"
+                >
+                  About Us
+                </Link>
+      
+                <Link
+                  href={"/demo"}
+                  className="block px-4 py-2 text-black hover:text-[#FB2E86] hover:bg-gray-100"
+                >
+                  Demo
+                </Link>
+                <Link
+                  href={"/faq"}
+                  className="block px-4 py-2 text-black hover:text-[#FB2E86] hover:bg-gray-100"
+                >
+                  FAQ
+                </Link>
+              </div>
+            </div>
+
+            <Link
+              href={"/grid"}
+              className="hover:text-[#FB2E86] text-black font-semibold mr-12"
+            >
+              Pages
             </Link>
-            <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold mr-12">Pages</Link>
-            <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold mr-12">Products</Link>
-            <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold mr-12">Blog</Link>
-            <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold mr-12">Shop</Link>
-            <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold mr-12">Contact</Link>
+            <Link
+              href={"/shopList"}
+              className="hover:text-[#FB2E86] text-black font-semibold mr-12"
+            >
+              Products
+            </Link>
+            <Link
+              href={"/blog"}
+              className="hover:text-[#FB2E86] text-black font-semibold mr-12"
+            >
+              Blog
+            </Link>
+            <Link
+              href={"/shopSlidebar"}
+              className="hover:text-[#FB2E86] text-black font-semibold mr-12"
+            >
+              Shop
+            </Link>
+            <Link
+              href={"/contact"}
+              className="hover:text-[#FB2E86] text-black font-semibold mr-12"
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Search Input */}
@@ -74,18 +130,18 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        {/* <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
           <nav className="flex flex-col items-center text-base">
-            <Link href={"#"} className="hover:text-[#FB2E86] text-[#FB2E86] font-semibold py-2">
+            <Link href={"/"} className="hover:text-[#FB2E86] text-[#FB2E86] font-semibold py-2">
               Home <IoIosArrowDown className="text-[17px]" />
             </Link>
-            <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold py-2">Pages</Link>
+            <Link href={"/grid"} className="hover:text-[#FB2E86] text-black font-semibold py-2">Pages</Link>
             <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold py-2">Products</Link>
             <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold py-2">Blog</Link>
             <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold py-2">Shop</Link>
-            <Link href={"#"} className="hover:text-[#FB2E86] text-black font-semibold py-2">Contact</Link>
+            <Link href={"/contact"} className="hover:text-[#FB2E86] text-black font-semibold py-2">Contact</Link>
           </nav>
-        </div>
+        </div> */}
       </header>
     </>
   );
